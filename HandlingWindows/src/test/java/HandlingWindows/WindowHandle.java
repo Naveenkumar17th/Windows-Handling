@@ -1,10 +1,21 @@
 package HandlingWindows;
 
+import java.awt.AWTException;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -24,7 +35,7 @@ public class WindowHandle {
 	
 	@Test
 	
-	public void addn() throws InterruptedException {
+	public void addn() throws InterruptedException, AWTException, IOException {
 		
 		
 		
@@ -71,12 +82,24 @@ public class WindowHandle {
 		}
 		
 		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		
+		Rectangle rc = new Rectangle(screenSize);
+		
+		Robot rb = new Robot();
+		
+		BufferedImage cr = rb.createScreenCapture(rc);
+		
+	   File fc = new File("C:\\Users\\navve\\git\\Windows-Handling\\HandlingWindows\\naveen.png");
+	   
+	   ImageIO.write(cr, "png", fc);
+	   
+	   
 		
 		
 		
 		
 		
-		ac = new Actions(driver);
 		
 	
 		
