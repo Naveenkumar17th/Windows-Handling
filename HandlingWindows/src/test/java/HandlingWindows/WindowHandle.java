@@ -94,6 +94,8 @@ public class WindowHandle {
 	   
 	   ImageIO.write(cr, "png", fc);
 	   
+	   System.out.println("It's done");
+	   
 	   
 		
 		
